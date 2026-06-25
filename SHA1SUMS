@@ -1,0 +1,7 @@
+7685db324cde3e13be90f43369cc5870ea1f9afb  src/copy_file.c
+b01ad3522349b46f11a666fe409961cea24007d5  src/crypto_nomicon.c
+aeefa146144fb7d21ef8563d2428ecd3ec630669  src/fingerprint.c
+5f3894e46b9efcc5b34d64c57d610b206055856b  src/main.c
+d33c07fcd6b510e454207489b0f100e51075cf3d  src/passcode.c
+c80da1cecff8f23fa1c8392df3b6492eb9f3be16  src/shasums.c
+122f7a2b1c5f0aa31ad3a7c060352a13e76309d9  include/geheim.h

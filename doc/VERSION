@@ -1,0 +1,35 @@
+Version 1.0.3
+=============
+
+* Consolidated hash functions to accomodate both file and string input streams.
+* Added SHA-1 hashing of passcode.
+	- Altered passcode digit sum to use the hash code instead of the clear test.
+* Cleaned up comments, error messages and renamed source files more appropriately.
+----
+
+Version 1.0.2
+=============
+
+* Added result file creation, with switch (-o) to bypass this behavior.
+* Added display of resulting filename name and its hash (SHA256)..
+* Added passcode facility (see next).
+* Added shift values (min & max) altering technique.
+	- calculate digit sum from file's size.
+	- calculate digit sum from passcode character values.
+	- add both digit sums.
+	- subtract this sum from the shift minimum value and add that sum to the shift maximum value.
+----
+
+Version 1.0.1
+=============
+
+* Added key shifting.
+	- The key value will increase from its initial value to an upper liit value and repeat.
+* Encryption of key character implemented.
+----
+
+Version 1.0.0
+=============
+
+* Original iteration
+

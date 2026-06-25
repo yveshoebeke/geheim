@@ -1,0 +1,209 @@
+<!-- Creator     : groff version 1.24.1 -->
+<!-- CreationDate: Wed Jun 24 09:43:28 2026 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Content-Style" content="text/css">
+<style type="text/css">
+       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       h1      { text-align: center }
+</style>
+<title>GEHEIM</title>
+
+</head>
+<body>
+
+<h1 align="center">GEHEIM</h1>
+
+<a href="#NAME">NAME</a><br>
+<a href="#SYNOPSIS">SYNOPSIS</a><br>
+<a href="#DESCRIPTION">DESCRIPTION</a><br>
+<a href="#OPTIONS">OPTIONS</a><br>
+<a href="#PASSPHRASE">PASSPHRASE</a><br>
+<a href="#EXAMPLES">EXAMPLES</a><br>
+<a href="#NOTES">NOTES</a><br>
+<a href="#RETURN VALUES">RETURN VALUES</a><br>
+<a href="#FILES">FILES</a><br>
+<a href="#LICENSE">LICENSE</a><br>
+<a href="#AUTHOR">AUTHOR</a><br>
+
+<hr>
+
+
+<h2>NAME
+<a name="NAME"></a>
+</h2>
+
+
+<p style="margin-left:6%; margin-top: 1em">geheim -
+Encodes/Decodes a file by generating a key from its own
+content.</p>
+
+<h2>SYNOPSIS
+<a name="SYNOPSIS"></a>
+</h2>
+
+
+<p style="margin-left:6%; margin-top: 1em"><b>geheim</b>
+[<i>options</i>] [<i>file</i>...]</p>
+
+<h2>DESCRIPTION
+<a name="DESCRIPTION"></a>
+</h2>
+
+
+<p style="margin-left:6%; margin-top: 1em"><b>geheim</b> is
+a command-line tool written in C that encodes/decodes a
+specified file. It works seamlessly on Unix, Linux and
+macOS.</p>
+
+<h2>OPTIONS
+<a name="OPTIONS"></a>
+</h2>
+
+
+<p style="margin-left:6%; margin-top: 1em"><b>-h</b>,
+<b>--help</b></p>
+
+<p style="margin-left:15%;">Display a short help message
+and exit.</p>
+
+<p style="margin-left:6%;"><b>-v</b>, <b>--version</b></p>
+
+<p style="margin-left:15%;">Version information and
+exit.</p>
+
+<p style="margin-left:6%;"><b>-o</b>,
+<b>--overwrite</b></p>
+
+<p style="margin-left:15%;">Will encode/decode the
+specified filename onto itself.</p>
+
+<p style="margin-left:6%;"><b>-e</b>, <b>--encode</b></p>
+
+<p style="margin-left:15%;">Encode the specified file.
+Omitting this option will decode the specified file.</p>
+
+<p style="margin-left:6%;"><b>-f</b>, <b>--file</b></p>
+
+<p style="margin-left:15%;">Followed by the filename to be
+encoded/decoded.</p>
+
+<h2>PASSPHRASE
+<a name="PASSPHRASE"></a>
+</h2>
+
+
+<p style="margin-left:6%; margin-top: 1em">You will be
+prompted to enter a passphrase. This optional coding step
+will <br>
+be bypassed by not providing one (a blank return). <br>
+If a passphrase is entered during the encoding process, this
+same <br>
+passphrase must be entered when decoding the file. <br>
+This optional additional encryption will augment the
+standard encryption to <br>
+make it suitable to be encoded by specific individuals.</p>
+
+<h2>EXAMPLES
+<a name="EXAMPLES"></a>
+</h2>
+
+
+
+<p style="margin-left:6%; margin-top: 1em"><b>Encode:</b></p>
+
+<p style="margin-left:15%;">geheim -e -f filename</p>
+
+<p style="margin-left:6%;"><b>Decode:</b></p>
+
+<p style="margin-left:15%;">geheim -f filename</p>
+
+<p style="margin-left:6%;"><b>Encode</b> and
+<b>overwrite:</b></p>
+
+<p style="margin-left:15%;">geheim -e -o -f filename</p>
+
+<h2>NOTES
+<a name="NOTES"></a>
+</h2>
+
+
+<p style="margin-left:6%; margin-top: 1em">The resulting
+file of an Encoding or Decoding request will have the <br>
+extention <b>.geheim</b> attached to it, unless the
+overwrtie flag (-o or <br>
+--overwrite) is set. <br>
+If the overwrite flag is set the result will be overwriting
+the original <br>
+content.</p>
+
+<h2>RETURN VALUES
+<a name="RETURN VALUES"></a>
+</h2>
+
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="6%"></td>
+<td width="2%">
+
+
+<p style="margin-top: 1em"><b>0</b></p></td>
+<td width="7%"></td>
+<td width="85%">
+
+
+<p style="margin-top: 1em">Success.</p></td></tr>
+<tr valign="top" align="left">
+<td width="6%"></td>
+<td width="2%">
+
+
+<p style="margin-top: 1em"><b>1</b></p></td>
+<td width="7%"></td>
+<td width="85%">
+
+
+<p style="margin-top: 1em">A process, non-exisiting file or
+specified option flag(s) (omission/unknown) error. An
+apropriate error message will be displayed.</p></td></tr>
+</table>
+
+<h2>FILES
+<a name="FILES"></a>
+</h2>
+
+
+
+<p style="margin-left:6%; margin-top: 1em"><i>/usr/local/share/doc/geheim/README.md</i></p>
+
+<p style="margin-left:15%;">Documentation to The
+project.</p>
+
+<h2>LICENSE
+<a name="LICENSE"></a>
+</h2>
+
+
+
+<p style="margin-left:6%; margin-top: 1em"><i>/usr/local/share/doc/geheim/LICENSE</i></p>
+
+<p style="margin-left:15%;">MIT license.</p>
+
+<h2>AUTHOR
+<a name="AUTHOR"></a>
+</h2>
+
+
+
+<p style="margin-left:6%; margin-top: 1em">ivofundusiuxtarivu@proton.com</p>
+<hr>
+</body>
+</html>

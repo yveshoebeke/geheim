@@ -1,0 +1,66 @@
+.TH GEHEIM 1 "JUNE 2026" "1.0.3" "geheim Manual"
+.SH NAME
+geheim \- Encodes/Decodes a file by generating a key from its own content.
+.SH SYNOPSIS
+.B geheim
+[\fIoptions\fR] [\fIfile\fR...]
+.SH DESCRIPTION
+.B geheim
+is a command-line tool written in C that encodes/decodes a specified file.
+It works seamlessly on Unix, Linux and macOS.
+.SH OPTIONS
+.TP
+.BR \-h ", " \--help
+Display a short help message and exit.
+.TP
+.BR \-v ", " \--version
+Version information and exit.
+.TP
+.BR \-o ", " \--overwrite
+Will encode/decode the specified filename onto itself.
+.TP
+.BR \-e ", " \--encode
+Encode the specified file. Omitting this option will decode the specified file.
+.TP
+.BR \-f ", " \--file
+Followed by the filename to be encoded/decoded.
+.SH PASSPHRASE
+.TP
+You will be prompted to enter a passphrase. This optional coding step will be bypassed by not providing one (a blank return).
+.TP
+If a passphrase is entered during the encoding process, this same passphrase must be entered when decoding the file.
+.TP
+This optional additional encryption will augment the standard encryption to make it suitable to be encoded by specific individuals.
+.SH EXAMPLES
+.TP
+.BR Encode:
+geheim -e -f filename
+.TP
+.BR Decode:
+geheim -f filename
+.TP
+.BR Encode " and " overwrite:
+geheim -e -o -f filename
+.SH NOTES
+.TP
+The resulting file of an Encoding or Decoding request will have the extention \fB.geheim\fR attached to it, unless the overwrtie flag (-o or --overwrite) is set. 
+.TP
+If the overwrite flag is set the result will be overwriting the original content.
+.SH RETURN VALUES
+.TP
+.BR 0
+Success.
+.TP
+.BR 1
+A process, non-exisiting file or specified option flag(s) (omission/unknown) error. An apropriate error message will be displayed.
+.SH FILES
+.TP
+.I /usr/local/share/doc/geheim/README.md
+Documentation to The project.
+.SH LICENSE
+.TP
+.I /usr/local/share/doc/geheim/LICENSE
+MIT license.
+.SH AUTHOR
+ivofundusiuxtarivu@proton.com
+
