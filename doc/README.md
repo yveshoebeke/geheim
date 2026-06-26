@@ -30,9 +30,13 @@ Encryption utility that will let you obfuscate the content of a file, rendering 
 ### Install
 
 * From the command line (Terminal) type: 
-        ```curl -SL https://yveshoebeke.github.io/install/deploy_geheim.sh | sh```
+    * ```curl -SL https://yveshoebeke.github.io/install/deploy_geheim.sh | sh```
 * The installation will start automatically.
-* If standard system directories are not writeable an attempt will be made to create the appropriate directories (```$HOME/.local```).
+* If standard system directories are not writeable an attempt will be made to create the appropriate locations:
+    * ```$HOME/.local/bin/```
+    * ```$HOME/.local/share/doc/geheim/```
+    * ```$HOME/.local/share/licenses/geheim/```
+    * ```$HOME/.local/share/man/```
 
 ---
 
