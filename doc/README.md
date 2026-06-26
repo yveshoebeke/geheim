@@ -9,24 +9,30 @@ Encryption utility that will let you obfuscate the content of a file, rendering 
 
 ### Target Platforms
 
-* MacOS
+* macOS
 * Linux
 * Unix
 
 ---
 
-### Install
+### System Requirements
 
 * Prerequisites to build the application:
     * A ```C``` or ```C++``` compiler:
         * MacOS: ```Xcode Command Line Tools``` (provides ```clang```).
         * Linux: ```gcc``` or ```clang```.
-        * Unix: ```cc``` , ```gcc``` or ```clang```.
+        * Unix: ```cc``` , ```gcc``` , ```pcc``` ...
     * A native build engine / generator:
         * ```make``` or ```ninja```.
+
+---
+
+### Install
+
 * From the command line (Terminal) type: 
-        ```curl -sSL https://yveshoebeke.github.io/build/geheim.sh | sh```
+        ```curl -SL https://yveshoebeke.github.io/install/deploy_geheim.sh | sh```
 * The installation will start automatically.
+* If standard system directories are not writeable an attempt will be made to create the appropriate directories (```$HOME/.local```).
 
 ---
 
