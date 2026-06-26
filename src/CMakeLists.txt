@@ -25,12 +25,16 @@ if(APPLE)
 	# macOS
 	set(BIN_DEST "bin")
 	set(DOC_DEST "share/doc/geheim")
+	set(HTML_DOC_DEST "share/doc/geheim/html")
+	set(PDF_DOC_DEST "share/doc/geheim/pdf")
 	set(LICENSE_DEST "share/licenses/geheim")
 	set(MAN_DEST "share/man/man1")
 else()
-	# Linux
+	# Linux/Unix
 	set(BIN_DEST ${CMAKE_INSTALL_BINDIR})
 	set(DOC_DEST ${CMAKE_INSTALL_DOCDIR})
+	set(HTML_DOC_DEST ${CMAKE_INSTALL_DOCDIR}/html)
+	set(PDF_DOC_DEST ${CMAKE_INSTALL_DOCDIR}/pdf)
 	set(LICENSE_DEST "share/licenses/geheim")
 	set(MAN_DEST ${CMAKE_INSTALL_MANDIR}/man1)
 endif()
@@ -41,8 +45,8 @@ install(TARGETS geheim DESTINATION ${BIN_DEST})
 
 # Install auxiliaries - documentation.
 install(FILES ../doc/README.md DESTINATION ${DOC_DEST})
-install(FILES ../doc/geheim.html DESTINATION ${DOC_DEST})
-install(FILES ../doc/geheim.pdf DESTINATION ${DOC_DEST})
+install(FILES ../doc/html/geheim.html DESTINATION ${HTML_DOC_DEST})
+install(FILES ../doc/pdf/geheim.pdf DESTINATION ${PDF_DOC_DEST})
 # Install auxiliaries - license.
 install(FILES ../doc/LICENSE DESTINATION ${LICENSE_DEST})
 # Install auxiliaries - man page.
