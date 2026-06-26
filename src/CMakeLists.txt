@@ -48,7 +48,7 @@ install(FILES ../doc/README.md DESTINATION ${DOC_DEST})
 install(FILES ../doc/html/geheim.html DESTINATION ${HTML_DOC_DEST})
 install(FILES ../doc/pdf/geheim.pdf DESTINATION ${PDF_DOC_DEST})
 # Install auxiliaries - license.
-install(FILES ../doc/LICENSE DESTINATION ${LICENSE_DEST})
+install(FILES ../LICENSE DESTINATION ${LICENSE_DEST})
 # Install auxiliaries - man page.
-install(FILES ../doc/geheim.1 DESTINATION ${MAN_DEST})
+install(FILES ../doc/man/geheim.1 DESTINATION ${MAN_DEST})
 
