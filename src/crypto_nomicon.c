@@ -87,7 +87,6 @@ int encode_data(int encode, const char *passcode_hash, const char *data_file) {
 	int shift_init = SHIFT_MAX - offset;
 	int shift_max = SHIFT_MAX + offset;
  	
-
 	/* obtains proper key dependent on process. */
 	char key;
 	if (encode) {
@@ -98,12 +97,34 @@ int encode_data(int encode, const char *passcode_hash, const char *data_file) {
 		*(content_bytes + (sb.st_size - 1)) = key ^ SHIFT_INIT;
 	}
 
-	int shift = shift_init;
+	/* if a passcode was entered, allow its iteration in the encoding */
+	bool passcode_iteration = true;
+	if ( passcode_hash == NULL ) {
+		passcode_iteration = false;
+	}
 
+	/* Shift process:
+		- set initial shift and index values.
+		- iterated through content.
+	   	- recycle shift value if exceeding max.
+		- if passphrase available:
+			- check passcode index limit and recycle.
+			- get passphrase shift value.
+		- perform shift on content
+	*/
+	int shift = shift_init;
+	size_t pass_idx = 0;
+	int pass_shift = 0;
 	int i = 0;
+
 	while ( i++ < sb.st_size - 1 ) {
-		shift = (shift > shift_max) ? shift_init : shift;
-		*(content_bytes++) ^= (key + shift++);
+		shift = ( shift > shift_max ) ? shift_init : shift;
+		if ( passcode_iteration ) {
+			pass_idx = ( pass_idx > strlen(passcode_hash) ) ? 0 : pass_idx;
+			pass_shift = passcode_hash[pass_idx++];
+		}
+
+		*(content_bytes++) ^= (key + pass_shift + shift++);
 	}
 
 	munmap(content_bytes, sb.st_size);
