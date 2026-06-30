@@ -43,7 +43,7 @@ Encryption utility that will let you obfuscate the content of a file, rendering 
 ### User Instructions
 
 * ```geheim [-flags] [target]```
-* ```-e``` - ```--event``` Encode (omitting will decode)
+* ```-e``` - ```--encode``` Encode (omitting will decode)
 * ```-f``` - ```--file``` Target file
 * ```-o``` - ```--overwrite``` Overwrite (encoding will be performed on the target file itself)
 * ```-v``` - ```--version``` Version
