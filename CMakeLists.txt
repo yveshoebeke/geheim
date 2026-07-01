@@ -16,7 +16,8 @@ add_executable(geheim ${SOURCES})
 target_include_directories(geheim PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # Build time binary location.
-#set_target_properties(geheim PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+set_target_properties(geheim PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+
 # Define clang compiler flags.
 target_compile_options(geheim PUBLIC -std=c99 -Wall -Wextra -Wpedantic -g -O3 -MP -MD)
 # Define clang libraries needed.
