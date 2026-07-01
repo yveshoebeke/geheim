@@ -74,6 +74,14 @@ Encryption utility that will let you obfuscate the content of a file, rendering 
 
 ---
 
+### Test
+
+* A test script is installed in:
+    * ```HOME/.local/share/geheim/tests/test_geheim.sh```
+* It will encode and then decode the test data and compare the origina clear file shasum with the decoded one.
+
+---
+
 ### License
 
 This code is released under a MIT License

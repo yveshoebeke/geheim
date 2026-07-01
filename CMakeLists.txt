@@ -33,6 +33,8 @@ if(APPLE)
 	set(PDF_DOC_DEST "share/doc/geheim/pdf")
 	set(LICENSE_DEST "share/licenses/geheim")
 	set(MAN_DEST "share/man/man1")
+	set(CUSTOMER_HOME "$ENV{HOME}")
+	set(TEST_DEST "${CUSTOMER_HOME}/.local/share/geheim")
 else()
 	# Linux/Unix
 	set(BIN_DEST ${CMAKE_INSTALL_BINDIR})
@@ -41,8 +43,11 @@ else()
 	set(PDF_DOC_DEST ${CMAKE_INSTALL_DOCDIR}/pdf)
 	set(LICENSE_DEST "share/licenses/geheim")
 	set(MAN_DEST ${CMAKE_INSTALL_MANDIR}/man1)
+	set(CUSTOMER_HOME "$ENV{HOME}")
+	set(TEST_DEST "${CUSTOMER_HOME}/.local/share/geheim")
 endif()
 
+# Set te user's home diretory to install test facility later.
 
 # Install binary on system.
 install(TARGETS geheim DESTINATION ${BIN_DEST})
@@ -55,4 +60,6 @@ install(FILES doc/pdf/geheim.pdf DESTINATION ${PDF_DOC_DEST})
 install(FILES LICENSE DESTINATION ${LICENSE_DEST})
 # Install auxiliaries - man page.
 install(FILES doc/man/geheim.1 DESTINATION ${MAN_DEST})
+# Install test facility
+install(DIRECTORY tests DESTINATION ${TEST_DEST})
 
