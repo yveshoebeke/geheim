@@ -1,19 +1,22 @@
 cmake_minimum_required(VERSION 4.3)
 # Project definition.
-project(geheim VERSION 1.0.3 DESCRIPTION "Encodes/Decodes specified input stream" LANGUAGES C)
-set(VENDOR "Saulnier")
-# We are C99 inclined ... for now.
-set(CMAKE_C_STANDARD 99)
+project(geheim VERSION 1.0.3 LANGUAGES C)
+
+# Set C standard
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
 
 # Collect files from the source directory.
-file(GLOB_RECURSE SOURCES *.c) 
+file(GLOB_RECURSE SOURCES src/*.c) 
+
 # Make sources part of the project.
 add_executable(geheim ${SOURCES})
 
 # define the include (header-) file(s) location.
-target_include_directories(geheim PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+target_include_directories(geheim PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
 # Build time binary location.
-set_target_properties(geheim PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+#set_target_properties(geheim PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 # Define clang compiler flags.
 target_compile_options(geheim PUBLIC -std=c99 -Wall -Wextra -Wpedantic -g -O3 -MP -MD)
 # Define clang libraries needed.
@@ -44,11 +47,11 @@ endif()
 install(TARGETS geheim DESTINATION ${BIN_DEST})
 
 # Install auxiliaries - documentation.
-install(FILES ../doc/README.md DESTINATION ${DOC_DEST})
-install(FILES ../doc/html/geheim.html DESTINATION ${HTML_DOC_DEST})
-install(FILES ../doc/pdf/geheim.pdf DESTINATION ${PDF_DOC_DEST})
+install(FILES doc/README.md DESTINATION ${DOC_DEST})
+install(FILES doc/html/geheim.html DESTINATION ${HTML_DOC_DEST})
+install(FILES doc/pdf/geheim.pdf DESTINATION ${PDF_DOC_DEST})
 # Install auxiliaries - license.
-install(FILES ../LICENSE DESTINATION ${LICENSE_DEST})
+install(FILES LICENSE DESTINATION ${LICENSE_DEST})
 # Install auxiliaries - man page.
-install(FILES ../doc/man/geheim.1 DESTINATION ${MAN_DEST})
+install(FILES doc/man/geheim.1 DESTINATION ${MAN_DEST})
 
